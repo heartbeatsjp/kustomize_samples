@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-kustomize
+  labels:
+    name: hello-kustomize
+spec:
+  selector:
+    matchLabels:
+      name: hello-kustomize
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: hello-kustomize
+    spec:
+      containers:
+        - name: hello-kustomize
+          image: hello-kustomize
+          ports:
+            - containerPort: 8000
